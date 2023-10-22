@@ -1,0 +1,25 @@
+.search-desktop {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .search-desktop {
+    width: 100%;
+  padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .search-mobile {
+    display: block;
+  }
+
+  .search-desktop {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+
+.search-desktop {
+    width: 90%; /* Set the width to 100% for full screen width */
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin:16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-desktop::after {
+    content: "\1F50D";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #007BFF;
+    cursor: pointer;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 70%;
+    margin:1rem;
+    padding: 1rem;
+    /* display: flex; */
+    /* align-items: center; */
+  }
+
+  tr {
+    border-bottom: 1px solid #dddddd; 
+    padding:2rem;
+    font-size: 1rem;
+    /* Add a bottom border to each table row */
+  }
+  th, td {
+    text-align: left;
+    padding: 1rem;
+   
+  }
+  
+ .empty{
+  font-size: large;
+  align-items: center;
+  justify-content: center;
+ }
+ /* table.css */
+
+
+  /* tr:nth-child(even) {
+    background-color: #f2f2f2;
+  } */
