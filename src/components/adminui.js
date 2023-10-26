@@ -16,6 +16,7 @@ const AdminUI = () => {
   const [userToEdit, setUserToEdit] = useState(null);
   const [isEditFormVisible, setIsEditFormVisible] = useState(false);
 
+  //fetching userdata
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
@@ -35,6 +36,7 @@ const AdminUI = () => {
     fetchUserData();
   }, []);
 
+  //search functionality
   const handleSearch = (e) => {
     const query = e.target.value;
     setSearchText(query);
@@ -42,6 +44,7 @@ const AdminUI = () => {
     setCurrentPage(1);
   };
 
+  //search filter functionality
   const applySearchFilter = (query) => {
     const filtered = filterData.filter(
       (user) =>
@@ -52,6 +55,7 @@ const AdminUI = () => {
     setUserData(filtered);
   };
 
+  //select individual user
   const toggleSelectUser = (userId) => {
     if (selectedUsers.includes(userId)) {
       setSelectedUsers(selectedUsers.filter((id) => id !== userId));
@@ -60,6 +64,7 @@ const AdminUI = () => {
     }
   };
 
+  //select all users
   const toggleSelectAllUsers = () => {
     setSelectAll(!selectAll);
     if (!selectAll) {
@@ -69,6 +74,7 @@ const AdminUI = () => {
     }
   };
 
+  //selecting user on row onClick
   const handleRowClick = (clickedUser) => {
     if (selectedUsers.includes(clickedUser.id)) {
       setSelectedUsers(selectedUsers.filter((id) => id !== clickedUser.id));
@@ -77,11 +83,13 @@ const AdminUI = () => {
     }
   };
 
+  //edituser information icon functionality
   const handleEditUserInfo = (user) => {
     setUserToEdit(user);
     setIsEditFormVisible(true);
   };
 
+  //editform models, save functionality
   const handleSaveEditedUser = (e) => {
     e.preventDefault();
 
@@ -106,11 +114,13 @@ const AdminUI = () => {
     setIsEditFormVisible(false);
   };
 
+  //editform models, cancel functionality
   const handleCancelEdit = () => {
     setUserToEdit(null);
     setIsEditFormVisible(false);
   };
 
+  //delete icon functionality to delete user
   const handleDeleteUser = (userId) => {
     setFilterData((prevData) => prevData.filter((user) => user.id !== userId));
     setUserData((prevData) => prevData.filter((user) => user.id !== userId));
@@ -121,6 +131,7 @@ const AdminUI = () => {
   const currentUserData = userData.slice(indexofFirstData, indexOfLastData);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  // delete all selected users
   const handleDeleteSelected = () => {
     setSelectAll(false);
     const selectedUserIds = currentUserData
