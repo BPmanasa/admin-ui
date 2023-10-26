@@ -1,7 +1,14 @@
-import React from 'react';
-import './pagination.css';
+import React from "react";
+import "./pagination.css";
 
-function Pagination({ userData, handleDeleteSelected, userDataPerPage, totalUserData, currentPage, paginate }) {
+function Pagination({
+  userData,
+  handleDeleteSelected,
+  userDataPerPage,
+  totalUserData,
+  currentPage,
+  paginate,
+}) {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalUserData / userDataPerPage); i++) {
     pageNumbers.push(i);
@@ -13,22 +20,15 @@ function Pagination({ userData, handleDeleteSelected, userDataPerPage, totalUser
   return (
     <div>
       {userData.length ? (
-        <div className='d-flex align-items-center'>
-          <div className='d-flex justify-content-center align-items-center'>
-            <button onClick={handleDeleteSelected} 
-          style={{
-            backgroundColor: '#FA5F55',
-            color: 'white',
-            borderRadius: '16px', 
-            fontsize:'8px'
-          }}
-            >
-            DELETE SELECTED
+        <div>
+          <div className="delete-button">
+            <button className="btn btn-danger" onClick={handleDeleteSelected}>
+              DELETE SELECTED
             </button>
           </div>
-          <div  className='d-flex justify-content-center align-items-center'>
+          <div className="d-flex align-items-center justify-content-center m-3">
             <nav aria-label="Page navigation">
-              <ul className="pagination">
+              <ul className="pagination gap-2">
                 <li className="page-item">
                   <a
                     className="page-link rounded-circle custom-rounded-button"
@@ -42,7 +42,9 @@ function Pagination({ userData, handleDeleteSelected, userDataPerPage, totalUser
                 </li>
                 <li className="page-item">
                   <a
-                    className={`page-link rounded-circle custom-rounded-button ${isFirstPage ? 'disabled' : ''}`}
+                    className={`page-link rounded-circle custom-rounded-button ${
+                      isFirstPage ? "disabled" : ""
+                    }`}
                     onClick={() => paginate(currentPage - 1)}
                     href="!#"
                     aria-label="Previous"
@@ -56,7 +58,9 @@ function Pagination({ userData, handleDeleteSelected, userDataPerPage, totalUser
                     <a
                       onClick={() => paginate(number)}
                       href="!#"
-                      className={`page-link rounded-circle custom-rounded-button ${currentPage === number ? 'active' : ''}`}
+                      className={`page-link rounded-circle custom-rounded-button ${
+                        currentPage === number ? "active" : ""
+                      }`}
                       aria-label={`Page ${number}`}
                     >
                       {number}
@@ -65,7 +69,9 @@ function Pagination({ userData, handleDeleteSelected, userDataPerPage, totalUser
                 ))}
                 <li className="page-item">
                   <a
-                    className={`page-link rounded-circle custom-rounded-button ${isLastPage ? 'disabled' : ''}`}
+                    className={`page-link rounded-circle custom-rounded-button ${
+                      isLastPage ? "disabled" : ""
+                    }`}
                     onClick={() => paginate(currentPage + 1)}
                     href="!#"
                     aria-label="Next"

@@ -1,25 +1,15 @@
-.search-desktop {
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
-@media screen and (max-width: 767px) {
-  .search-desktop {
-    width: 100%;
-  padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-
-  .search-mobile {
-    display: block;
-  }
-
-  .search-desktop {
-    display: none;
-  }
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .search-bar {
+    max-width: 100%;
+    flex-direction: column;
+  } /* Allow the search bar to take up the full width on smaller screens */
 }

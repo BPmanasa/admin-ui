@@ -1,31 +1,18 @@
-import './searchBar.css';
-import { Search} from "@mui/icons-material"
-import {InputAdornment,TextField} from "@mui/material";
+import "./searchbar.css";
 
-const SearchBar = ({searchText, handleSearch}) => {
-
-    return(
-      <div>
-      <TextField
-        className="search-desktop"
-        size="large"
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <Search color="primary" />
-            </InputAdornment>
-          ),
-        }}
-        placeholder="Search for items/categories"
-        name="search"
+const SearchBar = ({ searchText, handleSearch }) => {
+  return (
+    <div className="search-bar">
+      <input
+        className="form-control"
+        type="search"
+        placeholder="Search for name, email or role"
+        aria-label="Search"
         value={searchText}
         onChange={handleSearch}
       />
-      
     </div>
-    );
+  );
 };
 
 export default SearchBar;
-
-
