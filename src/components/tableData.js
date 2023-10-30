@@ -1,5 +1,5 @@
 import React from "react";
-import "./tabledata.css";
+import "./tableData.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 

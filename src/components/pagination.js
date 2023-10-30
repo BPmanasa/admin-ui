@@ -28,68 +28,64 @@ function Pagination({
           </div>
           <div className="d-flex align-items-center justify-content-center m-3">
             <nav aria-label="Page navigation">
-              <ul className="pagination gap-2">
+              <ul className="pagination">
                 <li className="page-item">
-                  <a
+                  <button
                     className="page-link rounded-circle custom-rounded-button"
                     onClick={() => paginate(1)}
-                    href="!#"
                     aria-label="First"
                     disabled={isFirstPage}
                   >
                     <span aria-hidden="true">&laquo;&laquo;</span>
-                  </a>
+                  </button>
                 </li>
                 <li className="page-item">
-                  <a
+                  <button
                     className={`page-link rounded-circle custom-rounded-button ${
                       isFirstPage ? "disabled" : ""
                     }`}
                     onClick={() => paginate(currentPage - 1)}
-                    href="!#"
                     aria-label="Previous"
                     disabled={isFirstPage}
                   >
                     <span aria-hidden="true">&laquo;</span>
-                  </a>
+                  </button>
                 </li>
                 {pageNumbers.map((number) => (
                   <li key={number} className="page-item">
-                    <a
+                    <button
                       onClick={() => paginate(number)}
-                      href="!#"
                       className={`page-link rounded-circle custom-rounded-button ${
                         currentPage === number ? "active" : ""
                       }`}
                       aria-label={`Page ${number}`}
                     >
                       {number}
-                    </a>
+                    </button>
                   </li>
                 ))}
                 <li className="page-item">
-                  <a
+                  <button
                     className={`page-link rounded-circle custom-rounded-button ${
                       isLastPage ? "disabled" : ""
                     }`}
                     onClick={() => paginate(currentPage + 1)}
-                    href="!#"
                     aria-label="Next"
                     disabled={isLastPage}
                   >
                     <span aria-hidden="true">&raquo;</span>
-                  </a>
+                  </button>
                 </li>
                 <li className="page-item">
-                  <a
-                    className="page-link page-link rounded-circle custom-rounded-button"
+                  <button
+                    className="page-link page-link rounded-circle
+                    custom-rounded-button"
                     onClick={() => paginate(pageNumbers.length)}
-                    href="!#"
                     aria-label="Last"
                     disabled={isLastPage}
                   >
                     <span aria-hidden="true">&raquo;&raquo;</span>
-                  </a>
+                  </button>
                 </li>
               </ul>
             </nav>

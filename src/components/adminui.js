@@ -3,6 +3,7 @@ import axios from "axios";
 import SearchBar from "./searchBar";
 import TableData from "./tableData";
 import Pagination from "./pagination";
+import { useSnackbar } from "notistack";
 
 const AdminUI = () => {
   const [userData, setUserData] = useState([]);
@@ -15,6 +16,7 @@ const AdminUI = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userToEdit, setUserToEdit] = useState(null);
   const [isEditFormVisible, setIsEditFormVisible] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
 
   //fetching userdata
   const fetchUserData = async () => {
@@ -24,10 +26,13 @@ const AdminUI = () => {
       );
       setUserData(response.data);
       setFilterData(response.data);
+      setLoading(false);
       return response.data;
     } catch (error) {
-      console.error("Error fetching user data:", error);
-    } finally {
+      enqueueSnackbar(
+        "Error fetching user data. Please try again later... Check that the backend is running, reachable, and returns valid JSON.",
+        { variant: "error" }
+      );
       setLoading(false);
     }
   };

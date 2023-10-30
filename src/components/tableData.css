@@ -1,26 +1,26 @@
-.responsive-table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-.responsive-table th,
-.responsive-table td {
+table th,
+td {
   padding: 8px 12px;
   text-align: left;
   border: 1px solid #ccc;
 }
 
-.responsive-table th {
+table th {
   background-color: #f2f2f2;
   font-weight: bold;
 }
 
-.responsive-table tr {
+table tr {
   border: 1px solid #ccc;
 }
 
-.responsive-table td {
+table td {
   padding: 8px 12px;
   text-align: left;
   border: 1px solid #ccc;
@@ -100,4 +100,28 @@ button {
   text-align: center;
   font-weight: bold;
   margin: 20px 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .edit-form {
+    width: 80%;
+    padding: 6px;
+    font-size: 8px;
+  }
+
+  .edit-form h2 {
+    font-size: 14px;
+  }
+
+  .edit-form label {
+    font-size: 14px;
+  }
+
+  .edit-form input {
+    font-size: 10px;
+  }
+
+  .edit-form button {
+    font-size: 14px;
+  }
 }
