@@ -1,5 +1,5 @@
 import React from "react";
-import "./tableData.css";
+import "./tabledata.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 
@@ -60,7 +60,7 @@ const TableData = ({
         </div>
       )}
       {userData.length ? (
-        <table className="responsive-table">
+        <table>
           <thead>
             <tr>
               <th>

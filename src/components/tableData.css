@@ -1,3 +1,4 @@
+/* Shared styles for tables */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -5,7 +6,7 @@ table {
 }
 
 table th,
-td {
+table td {
   padding: 8px 12px;
   text-align: left;
   border: 1px solid #ccc;
@@ -20,23 +21,20 @@ table tr {
   border: 1px solid #ccc;
 }
 
-table td {
-  padding: 8px 12px;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-
+/* Highlight table rows on hover */
 tbody tr:hover {
   background-color: #f2f2f2;
 }
 
+/* Common styles for buttons */
 button {
   margin: 4px;
   border: none;
-  padding: 5px 5px;
+  padding: 5px;
   background-color: white;
 }
 
+/* Styles for the edit form */
 .edit-form {
   background: grey;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -48,7 +46,6 @@ button {
   transform: translate(-50%, -50%);
   z-index: 1000;
   width: 300px;
-  background-color: grey;
 }
 
 .edit-form h2 {
@@ -77,6 +74,7 @@ button {
   margin-bottom: 20px;
 }
 
+/* Buttons within the edit form */
 .form-buttons {
   display: flex;
   justify-content: space-between;
@@ -92,25 +90,28 @@ button {
   cursor: pointer;
 }
 
+/* Cancel button style */
 .edit-form button.cancel {
   background: #ccc;
 }
 
+/* No data message */
 .no-data-message {
   text-align: center;
   font-weight: bold;
   margin: 20px 0;
 }
 
+/* Responsive styles for smaller screens */
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .edit-form {
     width: 80%;
     padding: 6px;
-    font-size: 8px;
+    font-size: 14px; /* Adjusted font size for better visibility */
   }
 
   .edit-form h2 {
-    font-size: 14px;
+    font-size: 18px; /* Adjusted font size for better visibility */
   }
 
   .edit-form label {
@@ -118,10 +119,10 @@ button {
   }
 
   .edit-form input {
-    font-size: 10px;
+    font-size: 12px; /* Adjusted font size for better visibility */
   }
 
   .edit-form button {
-    font-size: 14px;
+    font-size: 16px; /* Adjusted font size for better visibility */
   }
 }
